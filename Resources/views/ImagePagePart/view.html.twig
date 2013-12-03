@@ -1,9 +1,26 @@
 {% if resource.media is not empty %}
-    <div class="image-pp">
-    {%- if resource.link is defined and resource.link != "" -%}
-    	<a href="{{ resource.link }}" {% if resource.openinnewwindow %}target="_blank"{% endif %}><img src="{{ app.request.schemeandhttphost ~ app.request.basePath ~ asset(resource.media.url) }}" alt="{{ resource.alttext }}" /></a>
-    {%- else -%}
-    	<img src="{{ app.request.schemeandhttphost ~ app.request.basePath ~ asset(resource.media.url) }}" alt="{{ resource.alttext }}" />
-    {%- endif -%}
+    {% set is_link = resource.link is defined and resource.link != "" %}
+    <div
+        class="image-pp"
+        {% if resource.align is defined and resource.align != "" %}
+            style="text-align: {{ resource.align }};"
+        {% endif %}
+    >
+    {% if is_link %}
+        <a href="{{ resource.link }}" {% if resource.openinnewwindow %}target="_blank"{% endif %}>
+    {% endif %}
+        <img
+            src="{{ app.request.schemeandhttphost ~ app.request.basePath ~ asset(resource.media.url) }}"
+            alt="{{ resource.alttext }}"
+            {% if resource.width is defined and resource.width is not null %}
+                width="{{resource.width}}"
+            {% endif %}
+            {% if resource.height is defined and resource.height is not null %}
+                height="{{resource.height}}"
+            {% endif %}
+        />
+    {% if is_link %}
+        </a>
+    {% endif %}
     </div>
 {% endif %}

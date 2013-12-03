@@ -7,6 +7,14 @@ mediapagepart:
         alttext: 'Alternative text'
         link: 'Choose link'
         openinnewwindow: 'Open in new window?'
+        width: 'Width'
+        height: 'Height'
+        align:
+            text: 'Image Alignment'
+            left: 'Left'
+            right: 'Right'
+            center: 'Center'
+
 
 
     slide:

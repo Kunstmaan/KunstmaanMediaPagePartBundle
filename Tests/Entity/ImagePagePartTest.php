@@ -71,6 +71,36 @@ class ImagePagePartTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::setAlign
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::getAlign
+     */
+    public function testSetGetAlign()
+    {
+        $this->object->setAlign('center');
+        $this->assertEquals('center', $this->object->getAlign());
+    }
+
+    /**
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::setWidth
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::getWidth
+     */
+    public function testSetGetWidth()
+    {
+        $this->object->setWidth(1234);
+        $this->assertEquals(1234, $this->object->getWidth());
+    }
+
+    /**
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::setHeight
+     * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::getHeight
+     */
+    public function testSetGetHeight()
+    {
+        $this->object->setHeight(1234);
+        $this->assertEquals(1234, $this->object->getHeight());
+    }
+
+    /**
      * @covers Kunstmaan\MediaPagePartBundle\Entity\ImagePagePart::getDefaultView
      * @todo   Implement testGetDefaultView().
      */

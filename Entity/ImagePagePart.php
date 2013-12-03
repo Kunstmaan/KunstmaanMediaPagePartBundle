@@ -38,6 +38,20 @@ class ImagePagePart extends AbstractPagePart
     protected $media;
 
     /**
+     * @ORM\Column(type="string", nullable=true, name="align")
+     */
+    protected $align;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, name="width")
+     */
+    protected $width;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true, name="height")
+     */
+    protected $height;
+    /**
      * Get opennewwindow
      *
      * @return bool
@@ -115,6 +129,78 @@ class ImagePagePart extends AbstractPagePart
     public function getAltText()
     {
         return $this->altText;
+    }
+
+    /**
+     * Gets the value of align.
+     *
+     * @return string
+     */
+    public function getAlign()
+    {
+        return $this->align;
+    }
+
+    /**
+     * Sets the value of align.
+     *
+     * @param string $align the align
+     *
+     * @return self
+     */
+    public function setAlign($align)
+    {
+        $this->align = $align;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of width.
+     *
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Sets the value of width.
+     *
+     * @param int $width the width
+     *
+     * @return self
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of height.
+     *
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Sets the value of height.
+     *
+     * @param int $height the height
+     *
+     * @return self
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+
+        return $this;
     }
 
     /**
