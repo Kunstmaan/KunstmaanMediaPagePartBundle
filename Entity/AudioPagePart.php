@@ -4,16 +4,16 @@ namespace Kunstmaan\MediaPagePartBundle\Entity;
 use Kunstmaan\PagePartBundle\Entity\AbstractPagePart;
 
 use Doctrine\ORM\Mapping as ORM;
-use Kunstmaan\MediaPagePartBundle\Form\VideoPagePartAdminType;
+use Kunstmaan\MediaPagePartBundle\Form\AudioPagePartAdminType;
 use Kunstmaan\MediaBundle\Entity\Media;
 
 /**
- * VideoPagePart
+ * AudioPagePart
  *
  * @ORM\Entity
- * @ORM\Table(name="kuma_video_page_parts")
+ * @ORM\Table(name="kuma_audio_page_parts")
  */
-class VideoPagePart extends AbstractPagePart
+class AudioPagePart extends AbstractPagePart
 {
 
     /**
@@ -37,7 +37,7 @@ class VideoPagePart extends AbstractPagePart
      *
      * @param Media $media
      *
-     * @return VideoPagePart
+     * @return AudioPagePart
      */
     public function setMedia($media)
     {
@@ -63,14 +63,14 @@ class VideoPagePart extends AbstractPagePart
      */
     public function getDefaultView()
     {
-        return "KunstmaanMediaPagePartBundle:VideoPagePart:view.html.twig";
+        return "KunstmaanMediaPagePartBundle:AudioPagePart:view.html.twig";
     }
 
     /**
-     * @return VideoPagePartAdminType
+     * @return AudioPagePartAdminType
      */
     public function getDefaultAdminType()
     {
-        return new VideoPagePartAdminType();
+        return new AudioPagePartAdminType();
     }
 }
