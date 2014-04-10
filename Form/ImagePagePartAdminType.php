@@ -30,6 +30,37 @@ class ImagePagePartAdminType extends AbstractType
         $builder->add('alttext', null, array('required' => false, 'label' => 'mediapagepart.image.alttext'));
         $builder->add('link', 'urlchooser', array('required' => false, 'label' => 'mediapagepart.image.link'));
         $builder->add('openinnewwindow', 'checkbox', array('required' => false, 'label' => 'mediapagepart.image.openinnewwindow'));
+        $builder->add(
+            'align',
+            'choice',
+            array(
+                'label' => 'mediapagepart.image.align.text',
+                'required' => false,
+                'choices' => array(
+                    'left' => 'mediapagepart.image.align.left',
+                    'right' => 'mediapagepart.image.align.right',
+                    'center' => 'mediapagepart.image.align.center'
+                )
+            )
+        );
+
+        $builder->add(
+            'width',
+            'number',
+            array(
+                'required' => false,
+                'label' => 'mediapagepart.image.width'
+            )
+        );
+
+        $builder->add(
+            'height',
+            'number',
+            array(
+                'required' => false,
+                'label' => 'mediapagepart.image.height'
+            )
+        );
     }
 
     /**
