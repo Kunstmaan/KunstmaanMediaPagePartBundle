@@ -3,46 +3,43 @@
 namespace Kunstmaan\MediaPagePartBundle\Tests\Entity;
 
 use Kunstmaan\MediaBundle\Entity\Media;
-use Kunstmaan\MediaPagePartBundle\Entity\VideoPagePart;
-use Kunstmaan\MediaPagePartBundle\Form\VideoPagePartAdminType;
+use Kunstmaan\MediaPagePartBundle\Entity\DownloadPagePart;
+use Kunstmaan\MediaPagePartBundle\Form\DownloadPagePartAdminType;
 use PHPUnit\Framework\TestCase;
 
-class VideoPagePartTest extends TestCase
+class DownloadPagePartTest extends TestCase
 {
     /**
-     * @var VideoPagePart
+     * @var DownloadPagePart
      */
     protected $object;
 
-    /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
     protected function setUp()
     {
-        $this->object = new VideoPagePart();
+        $this->object = new DownloadPagePart();
     }
 
-    public function testSetGetMedia()
+    public function testGetSetMedia()
     {
         $media = new Media();
         $media->setUrl('https://nasa.gov/spongebob.jpg');
         $media->setId(5);
         $this->object->setMedia($media);
         $this->assertEquals(5, $this->object->getMedia()->getId());
+        $this->assertEquals(5, $this->object->getMedia()->__toString());
         $this->assertEquals('https://nasa.gov/spongebob.jpg', $this->object->__toString());
-        $pp = new VideoPagePart();
+        $pp = new DownloadPagePart();
         $this->assertEquals('', $pp->__toString());
     }
 
     public function testGetDefaultView()
     {
         $defaultView = $this->object->getDefaultView();
-        $this->assertEquals('@KunstmaanMediaPagePart/VideoPagePart/view.html.twig', $defaultView);
+        $this->assertEquals('@KunstmaanMediaPagePart/DownloadPagePart/view.html.twig', $defaultView);
     }
 
     public function testGetDefaultAdminType()
     {
-        $this->assertEquals(VideoPagePartAdminType::class, $this->object->getDefaultAdminType());
+        $this->assertEquals(DownloadPagePartAdminType::class, $this->object->getDefaultAdminType());
     }
 }
